@@ -1,0 +1,14 @@
+# Publish as a GNA
+
+Use this route when your organization operates a GCVE Numbering Authority. Set up the local source for your assigned GNA namespace and keep the instance UUID stable. Confirm the identifier pattern and reservation ranges before rehearsal. [Minimal CNA/GNA Publication Instance](https://www.vulnerability-lookup.org/documentation/minimal-publication.html)
+
+## Reserve and publish
+
+1. Check for existing identifiers and record the relationships between them. Reserve a local identifier in your GNA namespace and record it in the private case.
+2. Prepare and review the public record with the agreed product and version scope, description, remediation, and references. Include any confirmed aliases so readers can correlate coverage of the same issue.
+3. At the agreed time, publish through the configured Vulnerability-Lookup editor or API. Verify the record resolves publicly under the expected identifier and appears on your configured publication channel. Consult the [GCVE Decentralized Publication Standard](https://gcve.eu/bcp/gcve-bcp-03/) for distribution requirements.
+4. Enter the published ID in the disclosure's **Vulnerability ID** field and use that same ID in the [advisory handoff](../advisory-and-follow-up/index.qmd).
+
+Verify the release as a reader without credentials. Check the identifier, advisory link, affected versions, and publication timestamp. If a record was published locally but has yet to appear in a downstream index, check the source endpoint and the consumer's fetch schedule before repeating the publication.
+
+**BCP-02** · [Publishing Advisories](https://gcve.eu/bcp/gcve-bcp-02/#publishing-advisories)

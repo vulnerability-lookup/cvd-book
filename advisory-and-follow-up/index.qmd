@@ -1,0 +1,17 @@
+# Publish the advisory and follow up
+
+## Release together
+
+Review the [release checklist](../checklists/index.qmd) with the coordinator and publication operator. Prepare an advisory that identifies the affected product and versions, explains user impact, and tells readers how to obtain and verify a fix or apply a mitigation. If a fix is pending, state what users can do now and where to find updates. Include the public identifiers, relevant references, and the credit agreed with the reporter.
+
+At release, publish the record through the agreed CNA, GNA, or partner workflow and verify the public identifier. Link it in the public advisory and link the record back to that advisory. In Vulnerability-Lookup, verify the case's public fields, enter the published **Vulnerability ID**, and explicitly set the case to *Disclosed* at the agreed point in the sequence.
+
+## Verify as a reader
+
+In a signed-out session, open the advisory, public record, and disclosure listing at `/disclosures/`. Check that the identifiers and version ranges agree, the update links work, and the public pages contain only approved details. If you distribute through a feed or API, verify the same record there. Give the reporter and participating teams the public links. [Feed syndication](https://www.vulnerability-lookup.org/documentation/feeds.html) · [API](https://www.vulnerability-lookup.org/documentation/api.html)
+
+## Keep the record current
+
+Assign someone to handle feedback and corrections. If the affected scope or fix changes, update the advisory and the published vulnerability record, record what changed and when, and notify the other publishers. Route substantive new evidence back through triage. Review the case afterward and turn any missed handoffs into specific changes to the team's process.
+
+**BCP-02** · [Publishing Advisories](https://gcve.eu/bcp/gcve-bcp-02/#publishing-advisories)

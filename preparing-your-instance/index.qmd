@@ -1,0 +1,15 @@
+# Prepare your instance
+
+## Configure report intake
+
+1. Publish a disclosure policy with the products in scope, a secure contact channel, and the updates reporters can expect. Assign a team mailbox and a backup owner.
+2. On a staging instance, set `user_accounts` to `true` in `config/generic.json` and enable `vulnerability_disclosure` in `WEB_MODULES` in `config/website.py`. Set `ADMIN_EMAIL` to the coordinator mailbox and link the disclosure policy from the report form. Follow the [CVD configuration guide](https://www.vulnerability-lookup.org/documentation/cvd.html) for the full settings and restart instructions.
+3. Grant the people reviewing cases the required permissions. Confirm mail delivery and use separate reporter and reviewer accounts to check their respective views.
+
+## Choose a publication route
+
+Use a [minimal publication deployment](https://www.vulnerability-lookup.org/documentation/minimal-publication.html) when the instance's main job is to publish records. Set up [CNA publication](../cna-publication/index.qmd) for CVE Services or [GNA publication](../gna-publication/index.qmd) for the allocated GCVE namespace. If another organization assigns the identifier, agree in advance who will reserve it, publish the record, and communicate any corrections.
+
+Submit a fictional report on staging. Confirm the coordinator receives it, the reporter receives a reply, and a separate account cannot read the case or its private notes. Check from a signed-out session that the case text stays private up to and including *Approved*. Record the tested version and settings before taking real reports.
+
+**BCP-02** · [Preparing for Vulnerability Handling](https://gcve.eu/bcp/gcve-bcp-02/#preparing-for-vulnerability-handling)

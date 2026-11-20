@@ -1,0 +1,15 @@
+# Coordinate an upstream and downstream release
+
+Use this fictional tabletop to rehearse a single report affecting a shared library and a product that ships it. The CSIRT coordinates in a staging Vulnerability-Lookup instance. The library maintainer works upstream, a distributor ships the downstream product, and the distributor's advisory team publishes guidance for its users.
+
+| Stage | Action in Vulnerability-Lookup | Handoff to verify |
+| --- | --- | --- |
+| Intake | Submit a fictional report about the Example Library and acknowledge it in **Discussion**. | The reporter receives the case reference and next update date. |
+| Scope | Record confirmed upstream versions and separately track the distributor's shipped versions in **Notes**. Link the coordination ticket through **External reference**. | Both teams confirm the scope they own, including downstream version numbers that differ from upstream. |
+| Coordination | Set the agreed disclosure date in **Review**. Record the release window, audience for limited sharing, and decision owner. | Upstream and downstream each confirm mitigation, fix delivery, and publication timing. |
+| Publication | Rehearse the applicable [CNA](../cna-publication/index.qmd) or [GNA](../gna-publication/index.qmd) path. For an external identifier owner, rehearse the handoff using a fictional identifier recorded in the tabletop notes. | One owner confirms the identifier and both advisories use it for the shared issue. |
+| Follow-up | Complete the staged disclosure and review the public content while signed out. | The case links to its public record and the advisories give product-specific update instructions. |
+
+Run the exercise again with the downstream update delayed. Have the teams decide whether to move the release or publish an earlier warning with available mitigations. Record who made the decision, how the reporter was informed, and the time of the next review. A complete rehearsal leaves each team with the same release plan and an owner for any follow-up.
+
+**BCP-02** · [Appendix B, Multi-Party Coordinated Vulnerability Disclosure in Open-Source Ecosystems](https://gcve.eu/bcp/gcve-bcp-02/#purpose-and-scope)

@@ -1,0 +1,14 @@
+# Publish as a CNA
+
+Use this route when your organization is an authorized CVE Numbering Authority and the vulnerability is within its scope. Confirm the CNA short name, the CVE Services environment, and the operator's credentials and permissions. Use the CVE Services test environment for rehearsals. [CNA Publication Service](https://www.vulnerability-lookup.org/documentation/cna.html)
+
+## Reserve and publish
+
+1. Check whether a CVE ID is already assigned. In the Vulnerability-Lookup editor, create a CNA publication in Vulnogram and use **Reserve a CVE ID** if an assignment is needed. Record the reserved ID in the private case.
+2. Review the CNA container for the agreed description, affected and fixed versions, remediation, references, and credit. Use the same ID in the advisory draft.
+3. At the agreed release time, use **Publish** on the CNA publication and confirm the state reaches `PUBLISHED`. If it shows `PUBLICATION_PENDING`, inspect the error and retry from the same publication after resolving it. Check upstream state before retrying an ambiguous failure.
+4. Confirm the CVE record is visible through the intended public CVE channel. Enter the published ID in the disclosure's **Vulnerability ID** field and complete the [advisory handoff](../advisory-and-follow-up/index.qmd).
+
+The CNA publication and the disclosure case each have their own state. The case's *Approved* status signals a handoff to the publication operator. Track the CVE publication and the transition to *Disclosed* as separate release steps.
+
+**BCP-02** · [Publishing Advisories](https://gcve.eu/bcp/gcve-bcp-02/#publishing-advisories)

@@ -1,0 +1,17 @@
+# Intake and triage
+
+## Receive and acknowledge a report
+
+1. Direct reporters to the report form at `/disclosure/new/` or the secure channel named in your policy. If a report arrives elsewhere, acknowledge it and move the conversation to a private channel.
+2. Assign an owner and record the date received, product, scope, reporter contact and credit preference, and any deadline the reporter has proposed. Keep restricted material in the report's confidential details or in your team's restricted case system.
+3. Open the case from the [disclosure review queue](https://www.vulnerability-lookup.org/documentation/cvd.html). Acknowledge receipt in **Discussion** and give the reporter a case reference and a date for the next update.
+
+## Make a triage decision
+
+Move a new case from *Reported* to *Under review*. Check that the product is in scope, look for an existing report or identifier, and record the known affected versions and impact. Mark unknowns for follow-up. If more information is needed, use *Waiting for reporter* and ask for the missing details in **Discussion**.
+
+Keep coordinator-only decisions and next actions in **Notes**. Use **External reference** for a private ticket or case identifier when investigation happens in another system. Record the reason and inform the reporter if the case is a duplicate, out of scope, or otherwise ends without publication.
+
+**Done when** the reporter has an acknowledgement and the case has a documented triage decision, an owner, and a next action.
+
+**BCP-02** · [Receiving and Handling Vulnerability Reports](https://gcve.eu/bcp/gcve-bcp-02/#receiving-and-handling-vulnerability-reports)
