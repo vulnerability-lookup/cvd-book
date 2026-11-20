@@ -72,7 +72,7 @@ Use **Browse / pick reserved ID** to reopen an allocation by identifier, year, o
 
 ## Prepare, validate, and publish the record
 
-Prepare the text in the restricted workspace while the case is embargoed. In Vulniverse, select the reserved ID, then enter the public title and description in **Summary**, the version ranges in **Affected products**, the fix and mitigations in **Guidance**, and the advisory URL in **References**. Add approved credit under **Credits and timeline** and use the **GCVE extension** for record relationships where applicable. Check **Preview** against the release checklist, then click **Validate** to check the record format. [GCVE vulnerability format](https://gcve.eu/bcp/gcve-bcp-05/)
+Prepare the text in the restricted workspace while the case is embargoed. In Vulniverse, select the reserved ID, then enter the public title and description in **Summary**, the version ranges in **Affected products**, the fix and mitigations in **Guidance**, and the advisory URL in **References**. Add approved credit under **Credits and timeline** and use the **GCVE extension** for record relationships where applicable. Check **Preview** against the release checklist, then click **Validate** to check the record format. [Write and evaluate a vulnerability record](../vulnerability-record-quality/index.qmd) · [GCVE vulnerability format](https://gcve.eu/bcp/gcve-bcp-05/)
 
 ![In Vulniverse, review the approved record and validate it before saving.](screenshots/06-editor.png){fig-alt="Vulniverse editor showing the Example Widget public advisory and its record validation controls."}
 
