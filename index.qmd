@@ -2,6 +2,14 @@
 
 This guide shows how to use Vulnerability-Lookup to receive a vulnerability report, coordinate a response, publish an advisory, and keep public information current. It follows the handling lifecycle in [GCVE BCP-02, version 2.0](https://gcve.eu/bcp/gcve-bcp-02/) and links to the product documentation for release-specific configuration and procedures.
 
+## Who wrote this guide and what it’s based on
+
+This book draws on the coordinated vulnerability disclosure work of Alexandre Dulaunoy, Cédric Bonhomme, and David Cruciani at the Computer Incident Response Center Luxembourg (CIRCL). CIRCL receives vulnerability reports, coordinates with reporters and affected organisations, and publishes disclosures. It is a CVE Numbering Authority under the ENISA root and is registered as GCVE Numbering Authority 1. [CIRCL disclosure policy](https://www.circl.lu/pub/coordinated-vulnerability-disclosure/) · [CNA announcement](https://www.circl.lu/pub/press/20260520/) · [GCVE registry](https://gcve.eu/gna/1/) · [Public disclosures](https://vulnerability.circl.lu/disclosures/)
+
+The process follows GCVE BCP-02, a public guide to handling and disclosing vulnerabilities. The book shows how to name a release approver, confirm what users can do to protect themselves, and record why a disclosure date was chosen or changed. That record gives leadership a basis for reviewing the decision if exploitation is reported or a fix is delayed. [BCP-02 disclosure decisions](https://gcve.eu/bcp/gcve-bcp-02/#coordinated-disclosure-decision-overview) · [Decide when to disclose](investigation-and-coordination/index.qmd#decide-when-to-disclose)
+
+Teams can rehearse the process with the fictional Example Portal case. The walkthrough identifies the Vulnerability-Lookup revision used for its screenshots. The release checklist shows how to verify, while signed out, that readers can find the advisory, the vulnerability record, and the instructions to protect themselves. [Worked example](intake-and-triage/index.qmd) · [Release checklist](checklists/index.qmd)
+
 ## The disclosure lifecycle
 
 ![The GCVE BCP-02 lifecycle with Vulnerability-Lookup support and the CNA and GNA publication routes.](introduction/diagrams/cvd-lifecycle.svg){width="92%" fig-alt="BCP-02 stages map to Vulnerability-Lookup activities, from preparation with roles and intake settings through private reports, case review, coordination, publication, and follow-up. A CNA reserves a CVE ID and publishes through CVE Services. A GNA reserves a GCVE ID and publishes through its GNA source. At release, the team links the record and marks the case Disclosed. New evidence returns to triage and lessons inform preparation."}
