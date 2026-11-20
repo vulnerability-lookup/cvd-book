@@ -40,6 +40,7 @@ book:
         - investigation-and-coordination/index.qmd
     - part: "Publishing and Follow-up"
       chapters:
+        - vulnerability-record-quality/index.qmd
         - cna-publication/index.qmd
         - gna-publication/index.qmd
         - advisory-and-follow-up/index.qmd

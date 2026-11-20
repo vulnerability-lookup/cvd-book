@@ -45,7 +45,7 @@ For either input, fill **Vendor**, **Product**, **Affected version**, and **Fixe
 
    ![The selected draft fields are now editable in Vulniverse.](screenshots/04-review-summary.png){fig-alt="Vulniverse shows the imported Example Desk title and description in the Summary panel for analyst review."}
 
-4. Open **Preview** and use **Validate** to check the record format. If enabled, use **Record Quality** to identify missing fields. Have the release approver verify the facts and public wording before publication. Use **Download** to hand off a draft in JSON, HTML, or PDF if the action is enabled. Keep the draft in your restricted case or release system. [Vulnerability editor](https://www.vulnerability-lookup.org/documentation/editor.html)
+4. Open **Preview** and use **Validate** to check the record format. If enabled, use **Record Quality** to identify missing fields. Have the release approver verify the facts and public wording before publication. Use **Download** to hand off a draft in JSON, HTML, or PDF if the action is enabled. Keep the draft in your restricted case or release system. [Write and evaluate a vulnerability record](../vulnerability-record-quality/index.qmd) · [Vulnerability editor](https://www.vulnerability-lookup.org/documentation/editor.html)
 
    ![Check what the draft will show before moving to publication.](screenshots/05-preview.png){fig-alt="The Vulniverse preview presents the reviewed Example Desk description and the publication operator's draft controls."}
 
