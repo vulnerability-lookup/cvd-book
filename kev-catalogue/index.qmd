@@ -76,18 +76,61 @@ This walkthrough uses `CVE-2021-44228` for Apache Log4j2 and relies on CISA's pu
 
    ![Readers can expand the public evidence to see the source and its listing date.](screenshots/02-public-evidence.png){fig-alt="The evidence card names the CISA Known Exploited Vulnerabilities Catalog and expands to show its data URL and listing date of 10 December 2021."}
 
-## Verify, distribute, and correct assertions
+## Verify and correct assertions
 
 1. **Check the catalogue while signed out.** Open `/known-exploited-vulnerabilities-catalog/` and confirm both entries are present. Follow their detail links and check that each points to the right vulnerability and contains only approved evidence.
 
    ![One local catalogue contains assertions about the vendor's own advisory and the third-party CVE.](screenshots/03-local-catalogue.png){fig-alt="The public local KEV catalogue lists CVE-2021-44228 and the fictional Example Widget GCVE as separate confirmed entries."}
 
-2. **Verify the machine-readable version.** Check `/known-exploited-vulnerabilities-catalog/export.ndjson` on the public host. Find the matching `vulnerability.vulnId`, then compare the entry UUID, `gcve.origin_uuid`, `status`, and `evidence` with the public page. Readers can subscribe to `/known-exploited-vulnerabilities-catalog/feed.atom` for recent changes. Let consumers know which catalogue to follow and verify that their mirrors retain the original catalogue identity. An exploited sighting created from the KEV entry is derived from the same assertion. Count the underlying evidence only once. [KEV feeds](https://www.vulnerability-lookup.org/documentation/feeds.html#known-exploited-vulnerabilities-kev-feeds) · [Synchronisation](https://www.vulnerability-lookup.org/documentation/sync.html)
+2. **Verify the machine-readable version.** Find the matching `vulnerability.vulnId` in the [BCP-07 export](#share-and-synchronise-bcp-07-assertions). Compare the entry UUID, origin, status, and evidence with the public page. An exploited sighting created from the KEV entry is derived from the same assertion. Count the underlying evidence only once.
 3. **Correct the existing entry.** Use **Edit Entry** to update evidence or narrow the scope, record when the decision changed, and inform downstream consumers if their interpretation needs to change. If your organisation retracts its local assertion, open it and choose **Withdraw**. The current list drops the entry and its derived exploited sighting is removed. **Show withdrawn** and the NDJSON export let consumers see the retained entry and evidence under the original UUID. Check that the export now shows `status.exploited` as `false` and `status.status_reason` as `withdrawn`. [BCP-07 withdrawal and reassertion](https://gcve.eu/bcp/gcve-bcp-07/#withdrawn-and-reasserted-kev-assertions)
 
    ![Confirm that you are withdrawing the selected entry from your own catalogue.](screenshots/04-withdraw-confirm.png){fig-alt="The Confirm Withdrawal dialog identifies the Example Widget GCVE and the local catalogue and explains what happens to the assertion and its evidence."}
 
    ![The signed-out detail page preserves a withdrawn assertion for reconciliation.](screenshots/04-withdrawn.png){fig-alt="The Example Widget KEV detail displays a Withdrawn assertion notice and shows the exploitation status as withdrawn."}
+
+## Share and synchronise BCP-07 assertions
+
+Vulnerability-Lookup publishes KEV entries in the GCVE BCP-07 assertion format. The catalogue export uses newline-delimited JSON (NDJSON) with one assertion per line. This is the Example Widget assertion from the exercise, pretty-printed with some optional fields omitted. [GCVE BCP-07 KEV assertion schema](https://gcve.eu/bcp/gcve-bcp-07/#json-schema---kev-assertion)
+
+```json
+{
+  "uuid": "112389b3-5b3e-4288-a2c1-8ebca9beacc1",
+  "vulnerability": {
+    "vulnId": "GCVE-65535-2026-20084",
+    "altId": ["EXAMPLE-SA-2026-0001"]
+  },
+  "status": {
+    "exploited": true,
+    "status_reason": "confirmed",
+    "status_updated_at": "2026-11-20T11:07:19+00:00"
+  },
+  "gcve": {
+    "origin_uuid": "a3369673-9e81-4770-9a9a-13e5a04bff38",
+    "object_uuid": "112389b3-5b3e-4288-a2c1-8ebca9beacc1",
+    "gna": 65535
+  },
+  "evidence": [
+    {
+      "source": "Example vendor incident response (exercise)",
+      "type": "incident_response",
+      "signal": "successful_exploitation"
+    }
+  ]
+}
+```
+
+The entry's `uuid` identifies the assertion, and `gcve.origin_uuid` identifies the instance that published it. `vulnerability.vulnId` identifies the vulnerability. Several catalogues can publish their own assertions about that same vulnerability and cite different evidence. For a third-party entry, the origin still identifies the catalogue that made the assertion, while `evidence[].source` can credit a source such as CISA. The export can also carry observation times and scope notes.
+
+### Share a catalogue with another instance
+
+1. **On the publishing instance,** share its public HTTPS base URL and the `local_instance_uuid` returned by `/api/system/configInfo`. Give file consumers `/known-exploited-vulnerabilities-catalog/export.ndjson` for the full catalogue, including withdrawn entries. Subscribers can use `/known-exploited-vulnerabilities-catalog/feed.atom` for recent changes. The built-in synchronisation service pulls BCP-07 assertions through the publishing instance's public `/api/kev/` endpoint. [KEV feeds](https://www.vulnerability-lookup.org/documentation/feeds.html#known-exploited-vulnerabilities-kev-feeds) · [Synchronisation service](https://www.vulnerability-lookup.org/documentation/sync.html)
+2. **On the receiving instance,** go to **Admin → Remote instances → Add a remote instance**. Enter the publisher's **Instance UUID**, a name, and its base URL in **Address**. Enable **Active** and **Sync KEV Entries**. Keep **Sync local objects only** enabled to pull assertions created by that publisher. Clear the other sync toggles if you only need the KEV catalogue, then select **Save**.
+
+   ![Configure the receiving instance to pull the publisher's own KEV assertions.](screenshots/05-remote-instance.png){fig-alt="The Add a remote instance form shows the example publisher's address and UUID, with Active, Sync KEV Entries and Sync local objects only selected."}
+
+3. **Run and verify the pull.** In **Admin → Maintenance**, use **Trigger Sync from Remote Instances** with an existing account login. Run the sync service on a schedule to keep the receiving instance current. After a pull, check **Last sync** on the remote instance settings, and inspect the receiver's export at `/known-exploited-vulnerabilities-catalog/export.ndjson?catalog_uuid=<publisher-uuid>`. Replace `<publisher-uuid>` with the publisher's instance UUID. Check that the entry retains the original UUID and origin, with matching status and evidence. [Synchronisation service](https://www.vulnerability-lookup.org/documentation/sync.html)
+4. **Verify corrections in the receiving export.** After changing the evidence on a shared entry, save the assertion in **Edit Entry** so the publisher advances its status timestamp. In the version shown, incremental pulls filter by entry creation date. If an older correction or withdrawal is missing, use **Reset last sync** on the receiver's remote instance settings and run the pull again. Verify that a withdrawal updates the existing UUID to `withdrawn` with `exploited` set to `false`.
 
 ## Use exploitation evidence in CRA reporting
 
