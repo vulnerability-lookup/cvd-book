@@ -7,9 +7,13 @@ lang: en
 book:
   title: "Coordinated Vulnerability Disclosure"
   subtitle: "A Practical Guide for CNAs, GNAs, CSIRTs, and Publishers"
+  author: "Vulnerability-Lookup contributors"
+  site-url: https://vulnerability-lookup.github.io/cvd-book/
   repo-url: https://github.com/vulnerability-lookup/cvd-book
   repo-branch: main
   repo-actions: [edit, issue]
+  output-file: cvd-book
+  downloads: [pdf]
   search: true
   sidebar:
     style: docked
@@ -38,5 +42,9 @@ book:
 
 format:
   html:
+    toc: true
+    toc-depth: 2
+  typst:
+    papersize: a4
     toc: true
     toc-depth: 2
