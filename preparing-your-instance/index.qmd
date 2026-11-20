@@ -19,7 +19,7 @@ Submit a fictional report and use separate reporter, manager, and administrator 
 | Administrator changes the state or disclosure date | Reporter, in one review message per save |
 | Manager adds a private note or an administrator changes only the external reference | No e-mail |
 
-Check that an unrelated account cannot read the case. Repeat the public check while signed out at **Approved**. A complete rehearsal then publishes the example and verifies which fields are visible. [Intake and triage](../intake-and-triage/index.qmd) · [Verify as a reader](../advisory-and-follow-up/index.qmd#verify-as-a-reader)
+Check that an unrelated account cannot read the case. If you assign a manager to a single disclosure, use a second private case to [verify the assignment's scope](../roles/index.qmd#assign-a-manager-to-one-disclosure). Repeat the public check while signed out at **Approved**. A complete rehearsal then publishes the example and verifies which fields are visible. [Intake and triage](../intake-and-triage/index.qmd) · [Verify as a reader](../advisory-and-follow-up/index.qmd#verify-as-a-reader)
 
 ## Choose a publication route
 
