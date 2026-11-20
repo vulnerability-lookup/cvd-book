@@ -8,6 +8,9 @@ book:
   title: "Coordinated Vulnerability Disclosure"
   subtitle: "A Practical Guide for CNAs, GNAs, CSIRTs, and Publishers"
   author: "Vulnerability-Lookup contributors"
+  editor:
+    - literal: "CIRCL Computer Incident Response Center Luxembourg"
+  isbn: "978-99987-458-1-0"
   date: today
   favicon: assets/vulnerability-lookup-icon.svg
   site-url: https://vulnerability-lookup.github.io/cvd-book/

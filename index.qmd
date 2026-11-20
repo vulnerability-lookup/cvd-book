@@ -2,6 +2,12 @@
 
 This guide shows how to use Vulnerability-Lookup to receive a vulnerability report, coordinate a response, publish an advisory, and keep public information current. It follows the handling lifecycle in [GCVE BCP-02, version 2.0](https://gcve.eu/bcp/gcve-bcp-02/) and links to the product documentation for release-specific configuration and procedures.
 
+## Publication details
+
+**Editor:** {{< meta book.editor.1.literal >}}
+
+**ISBN:** {{< meta book.isbn >}}
+
 ## Where to start
 
 | If you need to… | Start here |
