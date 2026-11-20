@@ -54,6 +54,20 @@ book:
     - checklists/index.qmd
     - references/index.qmd
 
+filters:
+  - cite-this
+
+cite-this:
+  position: title
+  scope: work
+  formats: [html, typst]
+  work:
+    type: book
+    author:
+      - literal: Vulnerability-Lookup contributors
+  bibtex:
+    key: cvd-book
+
 format:
   html:
     grid:

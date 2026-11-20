@@ -10,6 +10,10 @@ The process follows GCVE BCP-02, a public guide to handling and disclosing vulne
 
 Teams can rehearse the process with the fictional Example Portal case. The walkthrough identifies the Vulnerability-Lookup revision used for its screenshots. The release checklist shows how to verify, while signed out, that readers can find the advisory, the vulnerability record, and the instructions to protect themselves. [Worked example](intake-and-triage/index.qmd) · [Release checklist](checklists/index.qmd)
 
+::: {.content-visible when-format="typst"}
+{{< cite-this work >}}
+:::
+
 ## The disclosure lifecycle
 
 ![The GCVE BCP-02 lifecycle with Vulnerability-Lookup support and the CNA and GNA publication routes.](introduction/diagrams/cvd-lifecycle.svg){width="92%" fig-alt="BCP-02 stages map to Vulnerability-Lookup activities, from preparation with roles and intake settings through private reports, case review, coordination, publication, and follow-up. A CNA reserves a CVE ID and publishes through CVE Services. A GNA reserves a GCVE ID and publishes through its GNA source. At release, the team links the record and marks the case Disclosed. New evidence returns to triage and lessons inform preparation."}
