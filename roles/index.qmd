@@ -11,6 +11,16 @@ Assign a case owner, a backup, and a release approver before reports arrive. One
 | GCVE Numbering Authority (GNA) | Assign identifiers within its GNA namespace and publish GCVE records. | Return the GCVE ID and verify the public record and its distribution. |
 | Publisher | Review and release the user-facing advisory, then maintain corrections. | Give the coordinator the public advisory URL and confirmation of release. |
 
-Map these responsibilities to accounts and permissions on your instance. For example, a coordinator can review disclosures with `vulnerability_disclosure:review`. Identifier reservation and publication use the permissions for the relevant publication workflow. See the [CVD roles](https://www.vulnerability-lookup.org/documentation/cvd.html) and [role-based access control](https://www.vulnerability-lookup.org/documentation/rbac.html) documentation.
+## Grant access to the disclosure workflow
+
+| Account | Access in Vulnerability-Lookup |
+| --- | --- |
+| Reporter | Needs `vulnerability_disclosure:report` to submit. The creation policy grants the reporter the scoped `vulnerability_disclosure_owner` role on the new case, allowing them to view it, join its discussion, and edit the report in the states that allow edits. |
+| Disclosure manager | A global role with `vulnerability_disclosure:review` allows the manager to open a known case, join its discussion, and read private notes and the external reference. Share the private case link with the assigned manager. |
+| Administrator | `admin:access` gives access to **Admin → Disclosures** and the **Review** form that sets state and disclosure date. The built-in admin role also has the disclosure management permissions. |
+
+In **Admin → Roles**, create a globally assignable role with `vulnerability_disclosure:review` if a manager only needs case access. Assign that role to the manager and test the case link with their account. Arrange for an administrator to review the queue and make state changes. Identifier reservation and release use the permissions for the chosen publication route. [CVD roles](https://www.vulnerability-lookup.org/documentation/cvd.html#who-does-what) · [Role-based access control](https://www.vulnerability-lookup.org/documentation/rbac.html)
+
+![The disclosure permissions include a dedicated review permission for case managers.](screenshots/review-permission.png){fig-alt="The Vulnerability-Lookup role editor lists disclosure permissions, with vulnerability_disclosure:review selected."}
 
 **BCP-02** · [Roles and Responsibilities](https://gcve.eu/bcp/gcve-bcp-02/#roles-and-responsibilities)

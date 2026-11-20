@@ -1,0 +1,13 @@
+flowchart TD
+    accTitle: Vulnerability-Lookup disclosure lifecycle
+    accDescr: A reporter submits a private case. The team reviews it, can ask for an update and resume review, reject or close it, or contact the vendor and approve it. The team publishes the record and explicitly sets the case to Disclosed at release.
+    submit["Reporter submits a private case"] --> reported["Reported"]
+    reported --> review["Under review"]
+    review <-->|Request and receive details| wait["Waiting for reporter"]
+    review --> stop["Rejected or Closed"]
+    review --> vendor["Vendor contacted"]
+    vendor --> approved["Approved"]
+    approved -->|Publish record and save review| released["Disclosed"]
+    class wait,stop muted
+    class approved accent
+    class released success
