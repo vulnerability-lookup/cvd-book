@@ -1,0 +1,11 @@
+flowchart TD
+    accTitle: Local exploitation assertion workflow
+    accDescr: Match the report to a vendor or third-party vulnerability. Assess scope and evidence. If CRA reporting applies, notify securely on the statutory timeline. When cleared for public release, save the KEV assertion and add public evidence, then verify the public entry and export.
+    report["Match the finding to an advisory"] --> assess["Assess exploitation evidence and affected scope"]
+    assess -->|CRA reporting applies| notify["Notify securely through the CRA platform"]
+    assess --> approve["Clear the public wording and release time"]
+    approve --> save["Save the local KEV entry and add approved evidence"]
+    save --> verify["Verify the public entry and catalogue export"]
+    class notify muted
+    class save accent
+    class verify success
