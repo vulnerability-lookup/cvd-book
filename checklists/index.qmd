@@ -3,16 +3,16 @@
 ## Before approval
 
 - The case has an owner, a backup, a release approver, and a dated next action.
-- The reporter has received an update and confirmed their credit preference.
+- The reporter has received an update in **Discussion** and confirmed their credit preference. Any private case references and vendor coordination notes are in **External reference** or **Notes**.
 - The maintainer has confirmed affected versions, mitigations, and fix availability. Any gaps are documented for the release decision.
-- Participating teams have the release time and time zone, identifier owner, and advisory owner.
+- Participating teams have the release time and time zone, identifier owner, and advisory owner. The date in **Review** reflects that plan.
 - The public draft has been reviewed for sensitive case data, including reporter details and internal references.
 
 ## At release
 
 - Publish the vulnerability record through the agreed channel and confirm the public identifier.
 - Publish the advisory with version-specific guidance and verify that the update or mitigation instructions are reachable.
-- Add the identifier to the disclosure case and explicitly mark it *Disclosed* at the agreed time.
+- Add the identifier in **Review → Vulnerability ID**, select **Disclosed**, and save at the agreed time.
 - Verify the public pages and configured distribution channels while signed out. Send links to the reporter and participating teams.
 
 ## After release

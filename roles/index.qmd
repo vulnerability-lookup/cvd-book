@@ -11,6 +11,22 @@ Assign a case owner, a backup, and a release approver before reports arrive. One
 | GCVE Numbering Authority (GNA) | Assign identifiers within its GNA namespace and publish GCVE records. | Return the GCVE ID and verify the public record and its distribution. |
 | Publisher | Review and release the user-facing advisory, then maintain corrections. | Give the coordinator the public advisory URL and confirmation of release. |
 
-Map these responsibilities to accounts and permissions on your instance. For example, a coordinator can review disclosures with `vulnerability_disclosure:review`. Identifier reservation and publication use the permissions for the relevant publication workflow. See the [CVD roles](https://www.vulnerability-lookup.org/documentation/cvd.html) and [role-based access control](https://www.vulnerability-lookup.org/documentation/rbac.html) documentation.
+## Grant access to the disclosure workflow
+
+| Account | Access in Vulnerability-Lookup |
+| --- | --- |
+| Reporter | Needs `vulnerability_disclosure:report` to submit. The creation policy grants the reporter the scoped `vulnerability_disclosure_owner` role on the new case, allowing them to view it, join its discussion, and edit the report in the states that allow edits. |
+| Disclosure manager | `vulnerability_disclosure:review` grants access to the case, discussion, private notes, and external reference. A resource-scoped assignment applies to one disclosure. A global assignment applies to every disclosure and is reserved for managers authorised to read them all. |
+| Administrator | `admin:access` gives access to **Admin → Disclosures** and the **Review** form that sets state and disclosure date. The built-in admin role also has the disclosure management permissions. |
+
+### Assign a manager to one disclosure
+
+1. In **Admin → Roles**, create a role with `vulnerability_disclosure:review`. Clear **Role can be assigned globally** and select **Vulnerability Disclosure** under **Scoped resource types**.
+2. In **Role assignments**, select the manager, the new role, and **Vulnerability Disclosure** as the **Scope**. Enter the numeric case ID in **Resource ID**. Find it at the end of the administrator's **Review** URL (`/admin/disclosure/edit/<id>`). Select **Add assignment**, then share the private case link with the manager.
+3. From the manager's account, check that the assigned case opens with its **Discussion**, **Notes**, and **External reference**. Try the link to a different private case with the same account and confirm access is denied. Check the account's other roles for global disclosure permissions if the second case opens.
+
+An administrator handles the admin queue and state changes. Identifier reservation and release use the permissions for the chosen publication route. [CVD roles](https://www.vulnerability-lookup.org/documentation/cvd.html#who-does-what) · [Resource-scoped assignments](https://www.vulnerability-lookup.org/documentation/rbac.html#resource-scoped-assignments)
+
+![Select the review permission in the role editor. The role and its assignment determine which disclosures it covers.](screenshots/review-permission.png){fig-alt="The Vulnerability-Lookup role editor shows vulnerability_disclosure:review selected in the permissions list."}
 
 **BCP-02** · [Roles and Responsibilities](https://gcve.eu/bcp/gcve-bcp-02/#roles-and-responsibilities)

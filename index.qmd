@@ -18,4 +18,6 @@ This guide shows how to use Vulnerability-Lookup to receive a vulnerability repo
 | Release an advisory and verify that readers can find it | [Publish the advisory and follow up](advisory-and-follow-up/index.qmd) |
 | Rehearse the handoffs with multiple teams | [Coordinate an upstream and downstream release](multi-party-disclosure/index.qmd) |
 
+A worked Example Portal disclosure starts at [Intake and triage](intake-and-triage/index.qmd). Follow the same case through the reporter and administrator views, coordination, approval, and signed-out release checks.
+
 A case can span three records with different audiences. Keep confidential coordination in the disclosure case. Use the vulnerability record to carry the identifier and approved public data. Give users instructions for protecting their systems in the advisory. The [release checklist](checklists/index.qmd) brings these together.

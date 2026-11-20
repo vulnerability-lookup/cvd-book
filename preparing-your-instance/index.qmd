@@ -3,13 +3,26 @@
 ## Configure report intake
 
 1. Publish a disclosure policy with the products in scope, a secure contact channel, and the updates reporters can expect. Assign a team mailbox and a backup owner.
-2. On a staging instance, set `user_accounts` to `true` in `config/generic.json` and enable `vulnerability_disclosure` in `WEB_MODULES` in `config/website.py`. Set `ADMIN_EMAIL` to the coordinator mailbox and link the disclosure policy from the report form. Follow the [CVD configuration guide](https://www.vulnerability-lookup.org/documentation/cvd.html) for the full settings and restart instructions.
-3. Grant the people reviewing cases the required permissions. Confirm mail delivery and use separate reporter and reviewer accounts to check their respective views.
+2. On a staging instance, set `user_accounts` to `true` in `config/generic.json`. In `config/website.py`, set `"vulnerability_disclosure": True` inside `WEB_MODULES`, and set `ADMIN_EMAIL` and `ADMIN_NAME` to the coordination mailbox and team name. Add `CVD_POLICY_TITLE` and `CVD_POLICY_URL` to show the policy on the report form. Use `CVD_POLICY_LOGIN_MESSAGE` for sign-in instructions. Apply any pending database migrations and restart the website. [CVD configuration](https://www.vulnerability-lookup.org/documentation/cvd.html#enabling-it)
+3. Review the [role assignments](../roles/index.qmd#grant-access-to-the-disclosure-workflow) and your **Self-Registration Policy** before offering public registration. Sign in with a reporter account and open `/disclosure/new/`. Check that it can submit and that the displayed policy is the one you intend reporters to use.
+
+![A configured disclosure policy appears at the top of the report form.](screenshots/policy-intake.png){fig-alt="Vulnerability-Lookup's Create a vulnerability disclosure page displays the Example Security Policy banner."}
+
+### Rehearse notifications and access
+
+Submit a fictional report and use separate reporter, manager, and administrator accounts to check access. Confirm time-sensitive notifications arrive at the mailbox that is responsible for the next action. [CVD e-mail events](https://www.vulnerability-lookup.org/documentation/cvd.html#e-mails-at-a-glance)
+
+| Action | Expected recipient |
+| --- | --- |
+| Reporter submits a new report, edits it, or posts a message | Coordination mailbox (`ADMIN_EMAIL`) |
+| Team posts a message | Reporter |
+| Administrator changes the state or disclosure date | Reporter, in one review message per save |
+| Manager adds a private note or an administrator changes only the external reference | No e-mail |
+
+Check that an unrelated account cannot read the case. If you assign a manager to a single disclosure, use a second private case to [verify the assignment's scope](../roles/index.qmd#assign-a-manager-to-one-disclosure). Repeat the public check while signed out at **Approved**. A complete rehearsal then publishes the example and verifies which fields are visible. [Intake and triage](../intake-and-triage/index.qmd) · [Verify as a reader](../advisory-and-follow-up/index.qmd#verify-as-a-reader)
 
 ## Choose a publication route
 
 Use a [minimal publication deployment](https://www.vulnerability-lookup.org/documentation/minimal-publication.html) when the instance's main job is to publish records. Set up [CNA publication](../cna-publication/index.qmd) for CVE Services or [GNA publication](../gna-publication/index.qmd) for the allocated GCVE namespace. If another organization assigns the identifier, agree in advance who will reserve it, publish the record, and communicate any corrections.
-
-Submit a fictional report on staging. Confirm the coordinator receives it, the reporter receives a reply, and a separate account cannot read the case or its private notes. Check from a signed-out session that the case text stays private up to and including *Approved*. Record the tested version and settings before taking real reports.
 
 **BCP-02** · [Preparing for Vulnerability Handling](https://gcve.eu/bcp/gcve-bcp-02/#preparing-for-vulnerability-handling)
