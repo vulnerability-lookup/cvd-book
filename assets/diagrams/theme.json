@@ -1,0 +1,44 @@
+{
+  "mermaid": {
+    "startOnLoad": false,
+    "securityLevel": "strict",
+    "theme": "base",
+    "htmlLabels": false,
+    "deterministicIds": true,
+    "fontFamily": "DejaVu Sans, sans-serif",
+    "themeVariables": {
+      "primaryColor": "#f4f8fa",
+      "primaryTextColor": "#203344",
+      "primaryBorderColor": "#007f99",
+      "lineColor": "#576978",
+      "textColor": "#203344",
+      "secondaryColor": "#e3f2f5",
+      "tertiaryColor": "#ffffff",
+      "fontSize": "16px"
+    },
+    "themeCSS": ".node rect, .node polygon, .node path, .flowchart-link { stroke-width: 1.4px; }",
+    "flowchart": {
+      "htmlLabels": false,
+      "curve": "linear",
+      "padding": 18,
+      "nodeSpacing": 28,
+      "rankSpacing": 42,
+      "useMaxWidth": false
+    }
+  },
+  "classes": {
+    "accent": "fill:#e3f2f5,stroke:#007f99,color:#203344,stroke-width:1.8px",
+    "muted": "fill:#f4f8fa,stroke:#94a8b6,color:#203344",
+    "success": "fill:#edf7f2,stroke:#2e7855,color:#214f3b"
+  },
+  "frame": {
+    "background": "#ffffff",
+    "border": "#dce5eb",
+    "padding": 20,
+    "headerHeight": 64,
+    "graphGap": 16,
+    "logoWidth": 132,
+    "logoTop": 12,
+    "nodeRadius": 6
+  }
+}
