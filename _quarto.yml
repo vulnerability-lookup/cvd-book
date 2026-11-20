@@ -8,6 +8,8 @@ book:
   title: "Coordinated Vulnerability Disclosure"
   subtitle: "A Practical Guide for CNAs, GNAs, CSIRTs, and Publishers"
   author: "Vulnerability-Lookup contributors"
+  date: today
+  favicon: assets/vulnerability-lookup-icon.svg
   site-url: https://vulnerability-lookup.github.io/cvd-book/
   repo-url: https://github.com/vulnerability-lookup/cvd-book
   repo-branch: main
@@ -16,8 +18,13 @@ book:
   downloads: [pdf]
   search: true
   sidebar:
+    logo: assets/vulnerability-lookup-logo.jpg
+    logo-alt: "Vulnerability-Lookup"
     style: docked
     collapse-level: 1
+  page-footer:
+    left: "Coordinated Vulnerability Disclosure"
+    right: "Built with [Quarto](https://quarto.org)"
   chapters:
     - index.qmd
     - part: "Getting Started"
@@ -42,9 +49,30 @@ book:
 
 format:
   html:
+    grid:
+      sidebar-width: 260px
+      body-width: 850px
+      margin-width: 220px
+    theme:
+      light: [cosmo, assets/book.scss]
+      dark: [darkly, assets/book.scss]
     toc: true
-    toc-depth: 2
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    code-block-bg: true
+    link-external-newwindow: true
+    number-sections: false
   typst:
     papersize: a4
     toc: true
-    toc-depth: 2
+    toc-depth: 1
+    number-sections: false
+    fontsize: 10.5pt
+    mainfont: Source Sans 3
+    codefont: Source Code Pro
+    font-paths: [assets/pdf/fonts]
+    template-partials: [assets/pdf/typst-show.typ]
+    filters:
+      - path: assets/pdf/chapter-links.lua
+        at: post-quarto
