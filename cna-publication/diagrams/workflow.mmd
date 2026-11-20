@@ -1,0 +1,11 @@
+flowchart TD
+    accTitle: CNA disclosure and CVE publication workflow
+    accDescr: Review the report in private and agree on a release. Once the source record can be public, save it, create the CNA publication, and reserve the CVE ID. Submit the CNA container and verify the official CVE before disclosing the case. Check upstream state after a failed request before retrying.
+    intake["Review private report and agree on release"] --> source["When authorised, save the local source record"]
+    source --> reserve["Create CNA publication and reserve CVE ID"]
+    reserve --> publish["Publish the CNA container through CVE Services"]
+    publish --> verify["Verify CVE and advisory, then disclose the case"]
+    publish --> pending["If pending, check upstream before retrying"]
+    class source,reserve muted
+    class publish accent
+    class verify success

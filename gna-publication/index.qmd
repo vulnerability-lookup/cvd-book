@@ -8,6 +8,8 @@ The walkthrough uses the Vulniverse editor in Vulnerability-Lookup 7.1.0 develop
 
 A disclosure case holds the report, discussions, and the team's release decision. An ID reservation allocates a number for that case. The GCVE record describes the issue in a machine-readable format, and the advisory explains what affected users should do. Coordinate their release times and verify each public destination independently.
 
+If your organisation also operates a CNA, Vulnerability-Lookup can manage both publication routes from one disclosure case and local source record. Configure the instance for your GNA identity and enable the CNA Publication Service with your authorised CVE Services settings. Track the CVE submission separately from the local GCVE record. [Coordinate CNA and GNA publication on one instance](../cna-publication/index.qmd#coordinate-cna-and-gna-publication-on-one-instance)
+
 ![The GNA workflow, from report intake to public release and verification.](diagrams/workflow.svg){width="80%" fig-alt="Triage a private report, approve release, and reserve an ID. Save the public GCVE record at release time, link and disclose the case, then verify the public pages and API."}
 
 ## Set up the GNA
@@ -100,3 +102,9 @@ At release time, save the record and open its public page. Publish the user-faci
 - **Review operations.** Watch for replies needed, disclosures nearing their target date, and inconsistent public records. Verify the remaining annual ID capacity, test backups of case and allocation data, and review delays after release. [CVD insights](https://www.vulnerability-lookup.org/documentation/cvd.html#insights) · [Release checklists](../checklists/index.qmd)
 
 ![The GCVE ID panel can find an existing record when an operator needs to make a correction.](screenshots/09-published-list.png){fig-alt="Browse / pick reserved ID filtered to Published, showing the test GCVE record."}
+
+## Keep the GNA and CNA outputs in sync
+
+When a case uses both routes, keep the GCVE ID, CVE ID, and common advisory URL in the release plan. Use the disclosure's **Vulnerability ID** field for the primary public record and spell out both verified identifiers in the advisory. The GNA 0 form `GCVE-0-<year>-<serial>` represents the existing `CVE-<year>-<serial>`. Reserve in your own GNA namespace when you have a distinct publication to make. [GNA 0 registry entry](https://gcve.eu/gna/0/) · [GCVE ID allocation](https://gcve.eu/bcp/gcve-bcp-04/)
+
+On a dual-role instance, reserving the CVE through the CNA Publication Service attempts to mirror it into `cveMetadata.cveId` on the local record. The GNA API can expose that field while the CVE is still reserved upstream. Account for this in the release window, and check the official CVE record before describing it as published. For a correction, save the GCVE record and verify the GNA feed, then submit **Update CVE** through the existing CNA publication and verify the CVE separately. [CNA publication and follow-up](../cna-publication/index.qmd#publish-verify-and-maintain-the-record)
