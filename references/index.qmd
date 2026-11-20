@@ -24,4 +24,4 @@ The GCVE Working Group's [Practical Guide to Vulnerability Handling and Disclosu
 ## Publication standard and layout reference
 
 - [GCVE BCP-03, Decentralized Publication Standard](https://gcve.eu/bcp/gcve-bcp-03/)
-- [MISP Book](https://github.com/MISP/misp-book/) for the chapter-per-directory Quarto layout
+- Chapter-per-directory structure and HTML and PDF styling adapted from the [MISP Book](https://github.com/MISP/misp-book/). [Styling credits and licenses](https://github.com/vulnerability-lookup/cvd-book/tree/main/assets#book-styling-and-assets)

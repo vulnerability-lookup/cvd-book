@@ -13,6 +13,8 @@ quarto preview --to html --no-browser
 
 The render writes `_book/index.html` and `_book/cvd-book.pdf`. The preview server prints its local address and rebuilds HTML pages as you edit. A Vulnerability-Lookup instance is useful for trying the workflows in the guide. The book itself renders without one.
 
+The web theme and PDF layout are adapted from the MISP Book. The source, licenses, and font provenance are documented in [Book styling and assets](assets/README.md).
+
 ## Publish to GitHub Pages
 
 The `Publish book` workflow builds HTML and PDF on pull requests. On a push to `main`, or when run manually on `main`, it publishes both to the [GitHub Pages site](https://vulnerability-lookup.github.io/cvd-book/). Use the book's PDF download button or open [cvd-book.pdf](https://vulnerability-lookup.github.io/cvd-book/cvd-book.pdf) directly.
