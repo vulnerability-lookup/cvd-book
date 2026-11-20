@@ -47,6 +47,7 @@ book:
     - part: "Use Cases"
       chapters:
         - multi-party-disclosure/index.qmd
+        - patch-to-advisory/index.qmd
   appendices:
     - checklists/index.qmd
     - references/index.qmd
