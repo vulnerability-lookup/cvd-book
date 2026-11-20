@@ -1,0 +1,62 @@
+---
+config:
+  flowchart:
+    nodeSpacing: 12
+    rankSpacing: 13
+    padding: 8
+    wrappingWidth: 290
+---
+flowchart TB
+    accTitle: GCVE BCP-02 disclosure lifecycle in Vulnerability-Lookup
+    accDescr: Preparation uses role, email and intake settings. Teams receive, triage and verify reports in private cases and a review queue. Discussion, private notes and case status support investigation and testing. At release, the team publishes and links the vulnerability record and discloses the case. A CNA reserves a CVE ID and publishes through CVE Services. A GNA reserves a GCVE ID and publishes through its GNA source. Corrections, sightings, KEV and Insights support follow-up. New evidence returns to triage and lessons inform preparation.
+
+    subgraph headings[" "]
+        direction LR
+        process["GCVE BCP-02 lifecycle"] ~~~ lookup["In Vulnerability-Lookup"]
+    end
+    subgraph preparation[" "]
+        direction LR
+        prepare["Prepare for reports"] -.- setup["Configure roles, email and intake"]
+    end
+    subgraph intake[" "]
+        direction LR
+        triage["Receive, triage and verify"] -.- review["Private reports and review queue"]
+    end
+    subgraph investigation[" "]
+        direction LR
+        investigate["Investigate and test protection"] -.- discuss["Discussion, notes and case status"]
+    end
+    subgraph publication["Publication and identifiers"]
+        direction TB
+        subgraph release_mapping[" "]
+            direction LR
+            release["Coordinate release and disclose"] -.- publish["Publish and link the record<br/>Mark the case Disclosed"]
+        end
+        subgraph authority_routes[" "]
+            direction LR
+            cna["CNA<br/>Reserve a CVE ID<br/>Publish through CVE Services"] ~~~ gna["GNA<br/>Reserve a GCVE ID<br/>Publish through the GNA source"]
+        end
+        release_mapping ~~~ authority_routes
+    end
+    subgraph followup[" "]
+        direction LR
+        monitor["Support users, monitor and improve"] -.- maintain["Correct records and review Insights<br/>Track exploitation with sightings or KEV"]
+    end
+
+    headings ~~~ preparation
+    preparation --> intake --> investigation --> publication --> followup
+    followup -.-> feedback["New evidence returns to triage<br/>Lessons inform preparation"]
+
+    classDef heading fill:#ffffff,stroke:#ffffff,color:#007b96,font-weight:bold
+    class process,lookup heading
+    class prepare,triage,investigate,release,monitor muted
+    class setup,review,discuss,publish,maintain accent
+    class cna,gna,feedback success
+    style headings fill:none,stroke:none
+    style preparation fill:none,stroke:none
+    style intake fill:none,stroke:none
+    style investigation fill:none,stroke:none
+    style publication fill:#f8fafb,stroke:#dce5eb
+    style release_mapping fill:none,stroke:none
+    style authority_routes fill:none,stroke:none
+    style followup fill:none,stroke:none

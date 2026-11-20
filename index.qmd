@@ -2,6 +2,14 @@
 
 This guide shows how to use Vulnerability-Lookup to receive a vulnerability report, coordinate a response, publish an advisory, and keep public information current. It follows the handling lifecycle in [GCVE BCP-02, version 2.0](https://gcve.eu/bcp/gcve-bcp-02/) and links to the product documentation for release-specific configuration and procedures.
 
+## The disclosure lifecycle
+
+![The GCVE BCP-02 lifecycle with Vulnerability-Lookup support and the CNA and GNA publication routes.](introduction/diagrams/cvd-lifecycle.svg){width="92%" fig-alt="BCP-02 stages map to Vulnerability-Lookup activities, from preparation with roles and intake settings through private reports, case review, coordination, publication, and follow-up. A CNA reserves a CVE ID and publishes through CVE Services. A GNA reserves a GCVE ID and publishes through its GNA source. At release, the team links the record and marks the case Disclosed. New evidence returns to triage and lessons inform preparation."}
+
+Keep the reporter and affected parties informed throughout. Maintainers develop, test, and deliver fixes through their engineering and release workflows. Where the Cyber Resilience Act applies, run regulatory reporting in parallel through the Single Reporting Platform. [BCP-02 lifecycle overview](https://gcve.eu/bcp/gcve-bcp-02/#vulnerability-handling-at-a-glance) · [CRA reporting](kev-catalogue/index.qmd#use-exploitation-evidence-in-cra-reporting)
+
+When your team owns identifier assignment, use the agreed CNA or GNA route. Teams can also publish under local identifiers or coordinate with a partner that assigns the identifier. [CNA publication](cna-publication/index.qmd) · [GNA publication](gna-publication/index.qmd) · [Local publication](cna-publication/index.qmd#start-with-local-publication)
+
 ## Publication details
 
 **Editor:** {{< meta book.editor.1.literal >}}
