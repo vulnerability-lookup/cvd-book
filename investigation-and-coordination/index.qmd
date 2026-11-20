@@ -1,0 +1,17 @@
+# Investigation and coordination
+
+## Agree on scope and protection
+
+1. Ask the maintainer to confirm affected products and versions, user impact, and available mitigations. Record the vendor contact and move the case to *Vendor contacted* after making contact.
+2. Track the fix or mitigation, test status, fixed versions, and update availability. Use **Notes** for private progress and **Discussion** for updates intended for the reporter. Link vendor correspondence through **External reference** when it lives in another system.
+3. Agree on a publication time and time zone, the identifier owner, the advisory owner, and the next check-in. Give each participating team a contact for changes in scope or timing.
+
+## Decide when to disclose
+
+Set the disclosure date in **Review** to reflect the coordination decision. Revisit the plan if there is a leak, evidence of exploitation, or a delay in delivering protection. If an early warning is needed, record the reason and the protection users can apply now. Route any applicable reporting obligations through your organization's reporting process in parallel.
+
+Use *Approved* when the case is ready for the release handoff. The date is a tracking field, and publication of the disclosure takes an explicit transition to *Disclosed*. Coordinate that transition with the advisory and the publication record. See the [CVD lifecycle](https://www.vulnerability-lookup.org/documentation/cvd.html).
+
+**Done when** the release approver has a public draft, confirmed remediation information or an agreed early warning, and a named owner for every release step.
+
+**BCP-02** · [Investigating and Resolving Vulnerabilities](https://gcve.eu/bcp/gcve-bcp-02/#investigating-and-resolving-vulnerabilities), [Communicating with Submitters and Users](https://gcve.eu/bcp/gcve-bcp-02/#communicating-with-submitters-and-users), and [Coordinated Vulnerability Disclosure](https://gcve.eu/bcp/gcve-bcp-02/#coordinated-vulnerability-disclosure)

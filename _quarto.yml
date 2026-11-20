@@ -1,0 +1,42 @@
+project:
+  type: book
+  output-dir: _book
+
+lang: en
+
+book:
+  title: "Coordinated Vulnerability Disclosure"
+  subtitle: "A Practical Guide for CNAs, GNAs, CSIRTs, and Publishers"
+  repo-url: https://github.com/vulnerability-lookup/cvd-book
+  repo-branch: main
+  repo-actions: [edit, issue]
+  search: true
+  sidebar:
+    style: docked
+    collapse-level: 1
+  chapters:
+    - index.qmd
+    - part: "Getting Started"
+      chapters:
+        - roles/index.qmd
+        - preparing-your-instance/index.qmd
+    - part: "Handling a Disclosure"
+      chapters:
+        - intake-and-triage/index.qmd
+        - investigation-and-coordination/index.qmd
+    - part: "Publishing and Follow-up"
+      chapters:
+        - cna-publication/index.qmd
+        - gna-publication/index.qmd
+        - advisory-and-follow-up/index.qmd
+    - part: "Use Cases"
+      chapters:
+        - multi-party-disclosure/index.qmd
+  appendices:
+    - checklists/index.qmd
+    - references/index.qmd
+
+format:
+  html:
+    toc: true
+    toc-depth: 2

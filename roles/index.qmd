@@ -1,0 +1,16 @@
+# Roles and handoffs
+
+Assign a case owner, a backup, and a release approver before reports arrive. One team can hold several roles. Record who owns the next action when responsibility passes between teams.
+
+| Role | Responsibility | Handoff |
+| --- | --- | --- |
+| Reporter | Describe the issue, clarify affected scope, and state credit preferences. | Submit through the private reporting channel and keep the case reference. |
+| CSIRT or other coordinator | Own intake, triage, reporter communication, and coordination across affected parties. | Send each maintainer the information needed to assess its products and agree on the next update. |
+| Maintainer or product security team | Confirm affected releases, prepare and verify mitigations or fixes, and plan delivery. | Supply affected and fixed versions, remediation instructions, and a release decision. |
+| CVE Numbering Authority (CNA) | Assign and publish CVE records within its authorized scope. | Return the CVE ID and verify the published CVE record. |
+| GCVE Numbering Authority (GNA) | Assign identifiers within its GNA namespace and publish GCVE records. | Return the GCVE ID and verify the public record and its distribution. |
+| Publisher | Review and release the user-facing advisory, then maintain corrections. | Give the coordinator the public advisory URL and confirmation of release. |
+
+Map these responsibilities to accounts and permissions on your instance. For example, a coordinator can review disclosures with `vulnerability_disclosure:review`. Identifier reservation and publication use the permissions for the relevant publication workflow. See the [CVD roles](https://www.vulnerability-lookup.org/documentation/cvd.html) and [role-based access control](https://www.vulnerability-lookup.org/documentation/rbac.html) documentation.
+
+**BCP-02** · [Roles and Responsibilities](https://gcve.eu/bcp/gcve-bcp-02/#roles-and-responsibilities)

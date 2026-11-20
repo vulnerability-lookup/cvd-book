@@ -1,0 +1,27 @@
+# References
+
+## Map from GCVE BCP-02 to this book
+
+The GCVE Working Group's [Practical Guide to Vulnerability Handling and Disclosure](https://gcve.eu/bcp/gcve-bcp-02/) (BCP-02, v2.0) is the source for the handling lifecycle. It is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+| BCP-02 section | Where to apply it |
+| --- | --- |
+| Roles and Responsibilities, Preparing for Vulnerability Handling | [Roles and handoffs](../roles/index.qmd), [Prepare your instance](../preparing-your-instance/index.qmd) |
+| Receiving and Handling Vulnerability Reports | [Intake and triage](../intake-and-triage/index.qmd) |
+| Investigating and Resolving Vulnerabilities, Communicating with Submitters and Users, Coordinated Vulnerability Disclosure | [Investigation and coordination](../investigation-and-coordination/index.qmd) |
+| Publishing Advisories, Best Practices | [Publish as a CNA](../cna-publication/index.qmd), [Publish as a GNA](../gna-publication/index.qmd), [Publish the advisory and follow up](../advisory-and-follow-up/index.qmd) |
+| Appendix A, EU Cyber Resilience Act Reporting | [Decide when to disclose](../investigation-and-coordination/index.qmd#decide-when-to-disclose) points to parallel reporting. See [BCP-02 Appendix A](https://gcve.eu/bcp/gcve-bcp-02/#what-the-cra-adds) for the reporting process. |
+| Appendix B, Multi-Party Coordinated Vulnerability Disclosure in Open-Source Ecosystems | [Coordinate an upstream and downstream release](../multi-party-disclosure/index.qmd) |
+
+## Product documentation
+
+- [Vulnerability-Lookup coordinated vulnerability disclosure](https://www.vulnerability-lookup.org/documentation/cvd.html)
+- [CNA Publication Service](https://www.vulnerability-lookup.org/documentation/cna.html)
+- [Minimal CNA/GNA Publication Instance](https://www.vulnerability-lookup.org/documentation/minimal-publication.html)
+- [Vulnerability Editor](https://www.vulnerability-lookup.org/documentation/editor.html)
+- [Roles and Permissions](https://www.vulnerability-lookup.org/documentation/rbac.html)
+
+## Publication standard and layout reference
+
+- [GCVE BCP-03, Decentralized Publication Standard](https://gcve.eu/bcp/gcve-bcp-03/)
+- [MISP Book](https://github.com/MISP/misp-book/) for the chapter-per-directory Quarto layout
