@@ -4,6 +4,32 @@ A CVE Numbering Authority (CNA) assigns CVE IDs within its authorised scope and 
 
 The screenshots show the Vulniverse editor in Vulnerability-Lookup 7.1.0 development revision [`b4c82c1`](https://github.com/vulnerability-lookup/vulnerability-lookup/commit/b4c82c13e40a3e2ee91436ff1c52c9bc7021b50d). The walkthrough uses fictional data, a local CVE Services simulator, and [GNA 65535](https://gcve.eu/gna/65535/), the GCVE test namespace. For an authorised service rehearsal, use the CVE Services test environment and credentials issued for it.
 
+## Choose a publication path
+
+Organisations can publish advisories in Vulnerability-Lookup as soon as their instance and advisories are ready. A local identifier such as `EXAMPLE-SA-2026-0001` keeps the advisory addressable while the organisation decides whether it needs authority to assign CVE or GCVE IDs.
+
+| Goal | Path |
+| --- | --- |
+| Publish advisories under your own identifiers | [Start with local publication](#start-with-local-publication). |
+| Assign CVE IDs and publish records through CVE Services within an agreed scope | [Apply to become a CNA](#become-a-cna). |
+| Assign GCVE IDs in your own namespace and publish a discoverable feed | [Apply to become a GNA](../gna-publication/index.qmd#become-a-gna). |
+
+We recommend that eligible organisations, including software, hardware and service vendors, apply for both CNA and GNA status. The roles let a team publish through the CVE Program and operate its own GCVE publication source. Eligibility and approval are assessed separately. Choose the identifiers and channels each case needs, and manage both routes from the same Vulnerability-Lookup instance when appropriate. [Coordinate CNA and GNA publication on one instance](#coordinate-cna-and-gna-publication-on-one-instance)
+
+### Start with local publication
+
+1. Enable user accounts and configure `local_instance_name`, a stable `local_instance_uuid`, and `local_instance_vulnid_pattern` in `config/generic.json`. For IDs such as `EXAMPLE-SA-2026-0001`, set `local_instance_vulnid_example` to `EXAMPLE-SA-yyyy-nnnn` and use a matching pattern. Leave `cna` disabled. [Minimal publication instance](https://www.vulnerability-lookup.org/documentation/minimal-publication.html)
+2. With an authorised account, use your instance's local API to create the year's range if needed, reserve a local ID, and publish the record at release time. Use `POST /api/cna/cve-id-range/<year>`, `POST /api/cna/cve-id`, and `POST /api/cna/cve/<id>`, respectively. These routes use local authentication and your configured identifier format. See the instance's `/api/` reference for parameters and required permissions. Verify the advisory while signed out. [Vulnerability-Lookup API](https://www.vulnerability-lookup.org/documentation/api.html)
+3. Keep the local identifier and advisory URL stable. If you later assign or receive a CVE or GCVE identifier for the issue, add it to the advisory and link the published records. You can also publish locally and work with an existing CNA or GNA when a case calls for an official identifier.
+
+## Become a CNA
+
+1. **Prepare your policy and proposed scope.** The CVE Program asks for a public vulnerability disclosure policy, a public source for new disclosures, and agreement to its Terms of Use. Prepare the policy and advisory URLs, an organisational contact, the products or services you propose to cover, and an estimate of annual CVE ID needs. [CVE Program partner requirements](https://www.cve.org/PartnerInformation/Partner#CNA) · [CVE Program Terms of Use](https://www.cve.org/Legal/TermsOfUse)
+2. **Submit the registration form.** In the CVE Program Web Forms portal, choose **Register to Become a CNA**. Use the contact and proposed scope from your preparation and keep the ticket number for follow-up. [How to Become a Partner](https://www.cve.org/PartnerInformation/Partner#HowToBecomeAPartner) · [CVE Program Web Forms](https://cveform.mitre.org/)
+3. **Complete onboarding.** Confirm your agreed scope during onboarding, attend the introductory session, and complete the practice CVE exercises. Once the CVE Program lists your organisation as a partner, confirm your registered short name and obtain the appropriate CVE Services access before configuring production publication. [CVE Program onboarding](https://www.cve.org/PartnerInformation/Partner#OnboardingProcess) · [List of Partners](https://www.cve.org/PartnerInformation/ListofPartners)
+
+The CVE Program's 2019 article describes the original registration and training process. Use the current partner page and web forms portal for the application. [Become a CNA to Assign Your Own CVE IDs](https://www.cve.org/Resources/Media/Archives/OldWebsite/blog/August292019_Become_a_CNA_to_Assign_Your_Own_CVE_IDs.html)
+
 ## The workflow
 
 ![The CNA workflow, from private intake to CVE publication and verification.](diagrams/workflow.svg){width="80%" fig-alt="Triage the case in private and agree on the release. When local publication is authorised, save the source record, create the CNA publication, and reserve a CVE ID. Send the CNA container to CVE Services. Verify the CVE before marking the case Disclosed. If a request fails, check the upstream state before retrying."}
