@@ -1,0 +1,9 @@
+%% Source for workflow.svg. Export through Mermaid with HTML labels off for PDF compatibility.
+flowchart TD
+    intake["Receive private report"] --> review["Triage and coordinate a fix"]
+    review --> approve["Approve the case and agree on release time"]
+    review --> reserve["Set up the yearly range and reserve a GCVE ID"]
+    approve --> save["At release time: save the public GCVE record"]
+    reserve --> save
+    save --> disclose["Link the record and advisory and mark the case Disclosed"]
+    disclose --> verify["Verify public pages and publication API"]
