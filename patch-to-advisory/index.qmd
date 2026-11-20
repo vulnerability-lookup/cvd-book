@@ -37,17 +37,32 @@ For either input, fill **Vendor**, **Product**, **Affected version**, and **Fixe
 ## Select, verify, and edit the result
 
 1. Expand **View generated record** and **View analysis details**. Compare the proposed title, description, versions, and solution with the fix and the maintainer's release information. Review any assumptions and resolve differences with the vendor or upstream project.
-2. Select the fields you want to use and click **Apply selected fields**. The selected fields replace their current values in the editor. Record identifiers and publication metadata are preserved. In the example, the operator starts with the title, descriptions, affected products, and solution. Keep other fields unchecked until you have independently verified them.
+2. Select the fields you want to use and click **Apply selected fields**. The selected fields replace their current values in the editor. Record identifiers and publication metadata are preserved. In the example, the operator starts with the title, descriptions, affected products, and solution. Keep other fields unchecked until you have independently verified them. [Carry over the AI provenance](#record-ai-assistance-and-patch-provenance)
 
    ![Apply just the fields that are ready for review in the editor.](screenshots/03-select-fields.png){fig-alt="The completed analysis offers a list of fields to apply. Title, Descriptions, Affected products and Solutions are selected."}
 
-3. Review the applied fields in **Editor**. Confirm the impact and affected release ranges, add update instructions and any workaround, and use approved public references. Check that references, credits, comments, and provenance contain only material cleared for release. Confirm severity and any exploitation claims using your team's evidence. The GCVE provenance extensions can record how the draft was generated and the extent of human review. [AI assistance provenance](https://gcve.eu/bcp/extension/gcve-bcp-05-x-01/) · [Patch provenance](https://gcve.eu/bcp/extension/gcve-bcp-05-x-02/)
+3. Review the applied fields in **Editor**. Confirm the impact and affected release ranges, add update instructions and any workaround, and use approved public references. Check that references, credits, comments, and provenance contain only material cleared for release. Confirm severity and any exploitation claims using your team's evidence.
 
    ![The selected draft fields are now editable in Vulniverse.](screenshots/04-review-summary.png){fig-alt="Vulniverse shows the imported Example Desk title and description in the Summary panel for analyst review."}
 
 4. Open **Preview** and use **Validate** to check the record format. If enabled, use **Record Quality** to identify missing fields. Have the release approver verify the facts and public wording before publication. Use **Download** to hand off a draft in JSON, HTML, or PDF if the action is enabled. Keep the draft in your restricted case or release system. [Write and evaluate a vulnerability record](../vulnerability-record-quality/index.qmd) · [Vulnerability editor](https://www.vulnerability-lookup.org/documentation/editor.html)
 
    ![Check what the draft will show before moving to publication.](screenshots/05-preview.png){fig-alt="The Vulniverse preview presents the reviewed Example Desk description and the publication operator's draft controls."}
+
+## Record AI assistance and patch provenance
+
+By default, Patch2Vuln adds the following GCVE provenance extensions to its generated CVE-format draft. Expand **View generated record** and find them under `containers.cna.x_gcve[].extensions`.
+
+| Extension | What it records |
+| --- | --- |
+| [BCP-05-X-01](https://gcve.eu/bcp/extension/gcve-bcp-05-x-01/) | The level and scope of AI assistance, the model name or identifier and source, and the human review status. A newly generated draft starts with `ai_level: generated` and `review_status: none`. |
+| [BCP-05-X-02](https://gcve.eu/bcp/extension/gcve-bcp-05-x-02/) | How the patch analysis was run and what it produced, including the generator, timestamp, model, patch source and SHA-256, input truncation, confidence, assumptions, and assessment rationales. |
+
+When applying the draft to a CVE or GCVE record, select **GCVE metadata / AI provenance** with the fields you want to carry over, then click **Apply selected fields**. Inspect both extensions in **GCVE extension** or **Advanced JSON**. Keep exact inference settings, such as temperature, in your restricted run log when you need to reproduce the analysis. [Patch2Vuln generation provenance](https://github.com/gcve-eu/gcve-lab-patch2vuln#generation-provenance) · [Vulnerability-Lookup AI-assisted records](https://www.vulnerability-lookup.org/documentation/ai-assisted-records.html#provenance-in-the-record)
+
+Before release, review the extensions for private repository paths, commit subjects, and other details that need clearance. Set `review_status` to reflect the work actually completed. Remove the X-02 `draft` flag once publication review is complete. Check that both extensions remain in the exported record.
+
+The extensions give publishers machine-readable evidence of AI involvement and human review, which can support transparency and documentation under the EU AI Act. Assess the applicable duties for your role and how you publish the advisory. Article 50(4) addresses AI-generated or manipulated text published to inform the public on matters of public interest. It provides an exception where the content has undergone human review or editorial control and a natural or legal person holds editorial responsibility for the publication. Record that responsibility and provide any required disclosure to readers. [EU AI Act Article 50](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50)
 
 ## Write and release the advisory
 
