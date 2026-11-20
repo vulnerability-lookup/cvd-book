@@ -1,0 +1,7 @@
+# Acknowledgements {.unnumbered}
+
+The CIRCL team at the Computer Incident Response Center Luxembourg produced this book. It draws on the coordinated vulnerability disclosure (CVD) work of Alexandre Dulaunoy, Cédric Bonhomme, and David Cruciani.
+
+We thank everyone who uses and contributes to Vulnerability-Lookup, including CSIRTs, fellow CNAs, and GNAs. Your feedback and contributions help improve how teams coordinate and publish disclosures.
+
+We also thank the GCVE initiative for developing BCP-02, the practical guide that informs the disclosure process in this book. [GCVE BCP-02](https://gcve.eu/bcp/gcve-bcp-02/)
