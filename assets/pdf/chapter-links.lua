@@ -15,13 +15,13 @@ end
 local function link_chapters(doc)
   return doc:walk({
     Link = function(link)
-      local path = link.target:match('^(.-%.qmd)$')
-      if not path or path:match('^%a[%w+.-]*:') then return end
+      local path, fragment = link.target:match('^([^#]+)#?(.*)$')
+      if not path or not path:match('%.qmd$') or path:match('^%a[%w+.-]*:') then return end
       -- Chapter paths are relative to the root or one directory below it.
       path = path:gsub('^%./', ''):gsub('^%.%./', '')
       local id = chapter_ids[path]
       if id and id ~= '' then
-        link.target = '#' .. id
+        link.target = '#' .. (fragment ~= '' and fragment or id)
         return link
       end
     end,
