@@ -14,4 +14,6 @@ In a signed-out session, open the advisory, public record, and disclosure listin
 
 Assign someone to handle feedback and corrections. If the affected scope or fix changes, update the advisory and the published vulnerability record, record what changed and when, and notify the other publishers. Route substantive new evidence back through triage. Review the case afterward and turn any missed handoffs into specific changes to the team's process.
 
+When you verify exploitation and can share the finding, publish the evidence and affected scope as a separate assertion in your [local KEV catalogue](../kev-catalogue/index.qmd).
+
 **BCP-02** · [Publishing Advisories](https://gcve.eu/bcp/gcve-bcp-02/#publishing-advisories)
