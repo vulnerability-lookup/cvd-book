@@ -4,14 +4,20 @@
 
 ## Build and preview
 
-Install the [Quarto CLI](https://quarto.org/docs/get-started/). The HTML book builds from the repository root with Quarto alone. Validation used Quarto 1.11.9.
+Install the [Quarto CLI](https://quarto.org/docs/get-started/). The publishing workflow uses Quarto 1.11.9, which includes the Typst compiler for the PDF export. Run these commands from the repository root.
 
 ```sh
-quarto render --to html
-quarto preview --no-browser
+quarto render
+quarto preview --to html --no-browser
 ```
 
-The render writes `_book/index.html`. The preview server prints its local address and rebuilds pages as you edit. A Vulnerability-Lookup instance is useful for trying the workflows in the guide. The book itself renders without one.
+The render writes `_book/index.html` and `_book/cvd-book.pdf`. The preview server prints its local address and rebuilds HTML pages as you edit. A Vulnerability-Lookup instance is useful for trying the workflows in the guide. The book itself renders without one.
+
+## Publish to GitHub Pages
+
+The `Publish book` workflow builds HTML and PDF on pull requests. On a push to `main`, or when run manually on `main`, it publishes both to the [GitHub Pages site](https://vulnerability-lookup.github.io/cvd-book/). Use the book's PDF download button or open [cvd-book.pdf](https://vulnerability-lookup.github.io/cvd-book/cvd-book.pdf) directly.
+
+In repository **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions** when setting up another repository with this workflow.
 
 ## Add a chapter
 
