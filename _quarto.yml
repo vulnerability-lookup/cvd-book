@@ -45,6 +45,7 @@ book:
         - cna-publication/index.qmd
         - gna-publication/index.qmd
         - advisory-and-follow-up/index.qmd
+        - monitor-cvd/index.qmd
         - kev-catalogue/index.qmd
     - part: "Use Cases"
       chapters:

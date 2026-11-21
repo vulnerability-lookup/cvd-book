@@ -36,6 +36,7 @@ When your team owns identifier assignment, use the agreed CNA or GNA route. Team
 | Receive and coordinate a report as a CSIRT or maintainer | [Intake and triage](intake-and-triage/index.qmd) and [Investigation and coordination](investigation-and-coordination/index.qmd) |
 | Reserve an identifier and publish a record | [Publish as a CNA](cna-publication/index.qmd) or [Publish as a GNA](gna-publication/index.qmd) |
 | Release an advisory and verify that readers can find it | [Publish the advisory and follow up](advisory-and-follow-up/index.qmd) |
+| Monitor the disclosure queue and review how cases are handled | [Monitor CVD activity](monitor-cvd/index.qmd) |
 | Rehearse the handoffs with multiple teams | [Coordinate an upstream and downstream release](multi-party-disclosure/index.qmd) |
 
 A worked Example Portal disclosure starts at [Intake and triage](intake-and-triage/index.qmd). Follow the same case through the reporter and administrator views, coordination, approval, and signed-out release checks.

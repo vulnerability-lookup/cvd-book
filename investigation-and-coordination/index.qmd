@@ -21,7 +21,7 @@ Set **State** to **Approved** and select **Save review** when the case is ready 
 
 ![Review records the planned date, approval, and a manager-only link to the vendor's case.](screenshots/approve.png){fig-alt="The administrator's Review form shows Approved, the planned disclosure date, and the example vendor ticket in the internal External reference field."}
 
-Use **Insights** below **Admin → Disclosures** to spot approaching dates, dates already reached, and replies still owed. Review median time to first response and to publication to identify delays in the team's process. The timeline metrics depend on the review history recorded for each case. [CVD insights](https://www.vulnerability-lookup.org/documentation/cvd.html#insights)
+Use **Insights** below **Admin → Disclosures** to spot approaching dates, dates already reached, and replies still owed. Review median time to first response and to publication to identify delays in the team's process. The timeline metrics depend on the review history recorded for each case. [Monitor the response queue and release calendar](../monitor-cvd/index.qmd#run-the-daily-queue-review)
 
 ![The admin-only Insights view lists upcoming release dates and queue indicators.](screenshots/private-insights.png){fig-alt="Admin Insights shows open cases, reply and date counters, and a privately visible row for the upcoming Example Portal release."}
 
