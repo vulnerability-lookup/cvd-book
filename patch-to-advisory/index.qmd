@@ -41,7 +41,7 @@ For either input, fill **Vendor**, **Product**, **Affected version**, and **Fixe
 
    ![Apply just the fields that are ready for review in the editor.](screenshots/03-select-fields.png){fig-alt="The completed analysis offers a list of fields to apply. Title, Descriptions, Affected products and Solutions are selected."}
 
-3. Review the applied fields in **Editor**. Confirm the impact and affected release ranges, add update instructions and any workaround, and use approved public references. Check that references, credits, comments, and provenance contain only material cleared for release. Confirm severity and any exploitation claims using your team's evidence.
+3. Review the applied fields in **Editor**. Confirm the impact and affected release ranges, verify any proposed CPE against the catalogue, and add the public upstream repository link when applicable. Add update instructions and any workaround, and use approved public references. Check that references, credits, comments, and provenance contain only material cleared for release. Confirm severity and any exploitation claims using your team's evidence. [Choose a CPE for the advisory](../vulnerability-record-quality/index.qmd#look-up-an-existing-cpe)
 
    ![The selected draft fields are now editable in Vulniverse.](screenshots/04-review-summary.png){fig-alt="Vulniverse shows the imported Example Desk title and description in the Summary panel for analyst review."}
 
