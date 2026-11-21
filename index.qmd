@@ -22,11 +22,19 @@ Keep the reporter and affected parties informed throughout. Maintainers develop,
 
 When your team owns identifier assignment, use the agreed CNA or GNA route. Teams can also publish under local identifiers or coordinate with a partner that assigns the identifier. [CNA publication](cna-publication/index.qmd) · [GNA publication](gna-publication/index.qmd) · [Local publication](cna-publication/index.qmd#start-with-local-publication)
 
+::: {.content-visible when-format="typst"}
+{{< pagebreak >}}
+:::
+
 ## Publication details
 
 **Editor:** {{< meta book.editor.1.literal >}}
 
 **ISBN:** {{< meta book.isbn >}}
+
+| Copyright (C) 2026 Alexandre Dulaunoy
+| Copyright (C) 2026 CIRCL Computer Incident Response Center Luxembourg
+| Copyright (C) 2026 Vulnerability-lookup contributors
 
 ## Where to start
 
