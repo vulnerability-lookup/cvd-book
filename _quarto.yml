@@ -66,6 +66,7 @@ cite-this:
     author:
       - literal: Vulnerability-Lookup contributors
   bibtex:
+    type: book
     key: cvd-book
 
 format:

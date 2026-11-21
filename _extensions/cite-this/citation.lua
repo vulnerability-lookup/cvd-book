@@ -51,7 +51,7 @@ function M.normalize_authors(v)
       elseif name.literal then
         -- Nome literal (institucional) não é particionado em família/prenome.
         local lit = util.trim(name.literal)
-        if lit ~= "" then out[#out + 1] = { family = lit } end
+        if lit ~= "" then out[#out + 1] = { literal = lit } end
       end
     elseif type(name) == "string" then
       local n = M.parse_name(name)
@@ -60,7 +60,7 @@ function M.normalize_authors(v)
       out[#out + 1] = { family = item.family, given = item.given }
     elseif item.literal then
       local lit = util.trim(item.literal)
-      if lit ~= "" then out[#out + 1] = { family = lit } end
+      if lit ~= "" then out[#out + 1] = { literal = lit } end
     end
   end
 

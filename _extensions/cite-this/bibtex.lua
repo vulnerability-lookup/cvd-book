@@ -32,7 +32,8 @@ STOPWORDS["and"] = true
 function M.tokens(rec)
   local author = "anon"
   if rec.author and rec.author[1] then
-    author = rec.author[1].family or rec.author[1].given or "anon"
+    local first_author = rec.author[1]
+    author = first_author.literal or first_author.family or first_author.given or "anon"
   end
 
   local year = "nd"
@@ -84,13 +85,15 @@ function M.render(rec, cfg, lang)
   if rec.author then
     local parts = {}
     for _, a in ipairs(rec.author) do
-      if a.family and a.given then
-        parts[#parts + 1] = a.family .. ", " .. a.given
+      if a.literal then
+        parts[#parts + 1] = "{" .. M.escape(a.literal) .. "}"
+      elseif a.family and a.given then
+        parts[#parts + 1] = M.escape(a.family .. ", " .. a.given)
       else
-        parts[#parts + 1] = a.family or a.given
+        parts[#parts + 1] = M.escape(a.family or a.given)
       end
     end
-    put("author", table.concat(parts, " and "))
+    put("author", table.concat(parts, " and "), true)
   end
 
   put("title", rec.title)
