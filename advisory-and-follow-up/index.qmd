@@ -4,6 +4,8 @@
 
 Review the [release checklist](../checklists/index.qmd) with the coordinator and publication operator. Prepare an advisory that identifies the affected product and versions, explains user impact, and tells readers how to obtain and verify a fix or apply a mitigation. If a fix is pending, state what users can do now and where to find updates. Include the public identifiers, relevant references, and the credit agreed with the reporter.
 
+Verify the vendor, product, and repository when adding CPEs to the structured vulnerability record. [Choose a CPE for the advisory](../vulnerability-record-quality/index.qmd#look-up-an-existing-cpe)
+
 1. Publish the public vulnerability record through the agreed route and verify the identifier. Link it in the public advisory and link the record back to the advisory. The Example Portal walkthrough uses the GCVE test namespace. Use your agreed local identifier, CNA, GNA or partner publication route in production. [Local publication and CNA publication](../cna-publication/index.qmd#start-with-local-publication) · [GNA publication](../gna-publication/index.qmd#prepare-validate-and-publish-the-record)
 2. On the case's **Review** tab, check the title, description, affected product, and credit settings. Enter the public **Vulnerability ID** and set **State** to **Disclosed**. Select **Save review** at the coordinated release time. The transition replaces the planned date with the actual disclosure time and the reporter receives a review notification. [Publishing the vulnerability](https://www.vulnerability-lookup.org/documentation/cvd.html#publishing-the-vulnerability)
 
