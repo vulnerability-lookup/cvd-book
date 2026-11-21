@@ -25,7 +25,7 @@ Follow the identifier link from the public disclosure to the vulnerability recor
 
 Assign someone to handle feedback and corrections. If the affected scope or fix changes, update the advisory and the published vulnerability record, record what changed and when, and notify the other publishers. Route substantive new evidence back through triage. Review the case afterward and turn any missed handoffs into specific changes to the team's process.
 
-Use **Insights** below **Admin → Disclosures** to review response and release times. The public **Insights** at `/disclosures/` shows aggregate counts across cases and statistics based on disclosed case content. The public figures refresh every ten minutes. Upcoming titles and private queue indicators remain in the admin view.
+Use **Insights** below **Admin → Disclosures** to review response and release times. The public **Insights** at `/disclosures/` shows aggregate counts across cases and statistics based on disclosed case content. The public figures refresh every ten minutes. Upcoming titles and private queue indicators remain in the admin view. [Monitor CVD activity](../monitor-cvd/index.qmd)
 
 ![Public Insights shows aggregate disclosure activity.](screenshots/public-insights.png){fig-alt="The signed-out Insights section displays aggregate reports received, open and disclosed."}
 
