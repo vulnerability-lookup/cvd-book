@@ -46,6 +46,7 @@ When your team owns identifier assignment, use the agreed CNA or GNA route. Team
 | Release an advisory and verify that readers can find it | [Publish the advisory and follow up](advisory-and-follow-up/index.qmd) |
 | Monitor the disclosure queue and review how cases are handled | [Monitor CVD activity](monitor-cvd/index.qmd) |
 | Rehearse the handoffs with multiple teams | [Coordinate an upstream and downstream release](multi-party-disclosure/index.qmd) |
+| Train a team using the book's examples and checklists | [Training strategy and agenda](training-strategy/index.qmd) |
 
 A worked Example Portal disclosure starts at [Intake and triage](intake-and-triage/index.qmd). Follow the same case through the reporter and administrator views, coordination, approval, and signed-out release checks.
 
