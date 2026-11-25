@@ -54,6 +54,7 @@ book:
   appendices:
     - checklists/index.qmd
     - references/index.qmd
+    - training-strategy/index.qmd
 
 filters:
   - cite-this

@@ -1,0 +1,68 @@
+# Training strategy and agenda
+
+Use this half-day workshop to rehearse a coordinated vulnerability disclosure (CVD) from the first report to the signed-out release check. It is designed for CSIRTs, maintainers, publication operators, and staff who approve or verify releases. Use the book's fictional Example Portal case as the common thread. Show a worked step from the book, have participants perform the next handoff, and ask the receiving role to confirm what they can act on.
+
+By the end, participants should be able to:
+
+- Acknowledge and triage a report, assign an owner, and give the reporter a date for the next update.
+- Record affected versions, available protection, and a coordinated release decision while keeping private information in the appropriate case fields.
+- Choose a publication route, draft a record and advisory, and verify the release from a reader's perspective.
+
+## Half-day agenda
+
+The agenda runs for 3 hours and 30 minutes, including a 15-minute break. Times are elapsed from the workshop start.
+
+| Time | Activity and book material | What the trainer collects |
+| --- | --- | --- |
+| 00:00–00:20 | Walk through the [disclosure lifecycle](../index.qmd#the-disclosure-lifecycle), assign [roles](../roles/index.qmd), and choose who approves release. | A case owner, backup, and approver for each team. |
+| 00:20–00:55 | Use the form and queue screenshots in [Intake and triage](../intake-and-triage/index.qmd). Submit the report, acknowledge it, and request the missing scope. | A triage decision, an acknowledgement, and a dated next action. |
+| 00:55–01:30 | Reveal the maintainer update. Use [Investigation and coordination](../investigation-and-coordination/index.qmd) to agree on protection, timing, and handoffs. | A reporter update, a private case note, and a release plan with owners and a time zone. |
+| 01:30–01:45 | Break | |
+| 01:45–02:30 | Draft the public record and advisory from [Write and evaluate a vulnerability record](../vulnerability-record-quality/index.qmd). Choose local, CNA, GNA, or partner publication and peer-review with the [pre-approval checklist](../checklists/index.qmd#before-approval). | A record and advisory with matching scope, upgrade or mitigation advice, and agreed credit. |
+| 02:30–03:05 | Release on the trainer's signal and swap readers. Follow [Publish the advisory and follow up](../advisory-and-follow-up/index.qmd) and the [release checklist](../checklists/index.qmd#at-release). | Signed-out observations from staging, or a verification plan and findings from the screenshots. |
+| 03:05–03:30 | Debrief one delayed release decision and review [what to do after release](../checklists/index.qmd#after-release). | One process change per team with an owner and a date. |
+
+## Prepare the session
+
+1. Ask participants to read [Roles and handoffs](../roles/index.qmd) and bring their team's disclosure policy or a sample policy. Use the [disclosure lifecycle diagram](../index.qmd#the-disclosure-lifecycle) to introduce the sequence. Give each team the [case and release checklists](../checklists/index.qmd) and a copy of the [case worksheet](#case-worksheet).
+2. For a hands-on session, prepare an isolated Vulnerability-Lookup staging instance and note its version. Set up separate reporter, manager, administrator, and publication accounts for the actions they will perform. Give teams a signed-out browser session for verification and a staging update link to put in the practice advisory. Rehearse submission, review, and publication before class, using a test mailbox and staging-only publication destinations. Use fictional data and keep the exercise disconnected from production credentials, feeds, and publication services. [Prepare your instance](../preparing-your-instance/index.qmd) · [Grant access to the disclosure workflow](../roles/index.qmd#grant-access-to-the-disclosure-workflow)
+3. Use local staging publication for the common exercise. If the audience operates a CNA or GNA, use the relevant chapter to rehearse its release handoff. Use the test namespace for a GNA lab and simulate the external publisher's confirmation whenever a training endpoint is unavailable. [Local publication](../cna-publication/index.qmd#start-with-local-publication) · [Publish as a CNA](../cna-publication/index.qmd) · [Publish as a GNA](../gna-publication/index.qmd)
+4. For a tabletop, use the book's lifecycle diagram and screenshots in place of the staging instance. Have teams write their messages and decisions in the worksheet and describe the evidence they would collect at release. Reveal the book's signed-out screenshots after teams have made their own verification plan.
+
+Divide participants into groups of three to five. Assign a reporter, coordinator, maintainer, release operator, and approver. Combine roles in small groups and have teams swap advisories for the signed-out reader check.
+
+## Run the Example Portal exercise
+
+1. **Give the reporter the opening facts.** Example Portal can display archived workspace names to guest users. The affected versions are still being confirmed. The reporter requests anonymity and provides the fictional internal reference `LAB-PORTAL-41`. Ask the reporter to write a summary suitable for eventual publication and put the internal reference in **Confidential details**. Ask the coordinator to acknowledge the report and say what is needed next. [Submit and follow a report](../intake-and-triage/index.qmd#submit-and-follow-a-report)
+2. **Reveal the maintainer update during coordination.** Versions 2.3.0 through 2.3.2 are affected, version 2.3.3 fixes the issue, and restricting guest access is an interim mitigation. Ask the team to record the confirmed scope, send an update in **Discussion**, and keep internal coordination in **Notes**. Let teams choose an exercise release time and time zone, name the identifier and advisory owners, and state what would make them revisit the date. [Agree on scope and protection](../investigation-and-coordination/index.qmd#agree-on-scope-and-protection)
+3. **Check the boundary before signalling release.** Ask a reader to check that the staged **Approved** case is still private. If the selected workflow makes the record visible on save, have teams keep the draft in their restricted workspace until the release signal. After the signal, they publish or simulate publication of the record and advisory, link the case to the record, and explicitly move the case to **Disclosed**. Have a reader from another group compare the record, advisory, and disclosure. [Decide when to disclose](../investigation-and-coordination/index.qmd#decide-when-to-disclose) · [Verify as a reader](../advisory-and-follow-up/index.qmd#verify-as-a-reader)
+4. **Introduce a release delay during the debrief.** Tell teams that the update will miss the agreed window. Ask the approver to choose between moving the release and issuing an earlier warning with the interim mitigation. Ask who updates the reporter and when the team will review the decision again. For an upstream and downstream variant, use the [Example Library tabletop](../multi-party-disclosure/index.qmd).
+
+### Case worksheet
+
+Ask each team to complete this worksheet as the case progresses. Keep the case notes and public drafts in their respective exercise workspaces.
+
+| Item | What to record |
+| --- | --- |
+| Intake | Case reference, owner and backup, scope decision, acknowledgement, and next update date. |
+| Coordination | Confirmed impact and versions, open questions, interim mitigation, fix availability, and reporter credit preference. |
+| Release plan | Approver, publication route, identifier owner, advisory owner, release time and time zone, and conditions for revisiting the plan. |
+| Public drafts | Title and description, affected and fixed versions, user action, and agreed credit. Add the identifier and cross-links during the release handoff. |
+| Verification and follow-up | What the reader checked, any mismatch or exposed private field, who will correct it, and when. |
+
+## Debrief and assess
+
+Use the [case and release checklists](../checklists/index.qmd) and ask teams to show the evidence for four checks:
+
+- **Intake.** The reporter knows when to expect an update, and the next action has a named owner.
+- **Coordination.** The release plan names the approver and publishers, specifies a time zone, and records the fix and interim mitigation.
+- **Publication.** The advisory and record agree on impact and version scope, and the reader can find the update or mitigation guidance and the shared identifier.
+- **Privacy.** The signed-out reader can find the approved content after release. The reporter's identity, confidential details, discussion, notes, and internal reference remain restricted. In a tabletop, ask participants to point to the relevant screenshots and explain which checks they would still need to perform on their own instance.
+
+Ask each team which handoff was hardest to complete and what evidence the receiving role needed sooner. Give teams time to correct one missed check and repeat it. Close by assigning an owner and date to one improvement the team will make to its own disclosure process.
+
+## Adapt the workshop
+
+For a 90-minute tabletop, use 10 minutes for roles and lifecycle, 20 for intake, 20 for coordination, 25 for reviewing the public draft and planning signed-out verification, and 15 for the debrief. Reuse the worksheet and screenshots.
+
+For a longer session, add a block matched to the audience. Publication operators can compare the [CNA](../cna-publication/index.qmd) and [GNA](../gna-publication/index.qmd) release checks. Coordinators can use [Monitor CVD activity](../monitor-cvd/index.qmd) to look for overdue replies and release dates in the staged queue. Maintainers can review a fictional draft from [Draft a security advisory from a patch](../patch-to-advisory/index.qmd) and identify which claims need confirmation before release.
